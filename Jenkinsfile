@@ -15,7 +15,7 @@ pipeline {
 
     stage('check-secrets'){
       steps{
-        sh 'sudo docker pull gesellix/trufflehog'
+        sh 'echo "Deshmukh@1031" | sudo -S docker pull gesellix/trufflehog'
         sh 'sudo docker run -t gesellix/trufflehog --json https://github.com/He-man-t-D/DevSecOps.git > trufflehog'
       }
     }
