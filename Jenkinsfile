@@ -21,14 +21,7 @@ pipeline {
     stage('Deploy-to-tomcat'){
       steps{
         sshagent(['tomcat']){
-          sh'''ssh Hemant@74.225.211.113
-               ls
-               whoami
-               pwd
-               cd home/Hemant/prod/apache-tomcat-10.1.24/webapps/
-            '''
-          
-          sh 'scp -o StrictHostKeyChecking=no target/*.war Hemant@74.225.211.113:home/Hemant/prod/apache-tomcat-10.1.24/webapps/'
+          sh 'scp -o StrictHostKeyChecking=no target/*.war Hemant@74.225.211.113:prod/apache-tomcat-10.1.24/webapps/'
           
         }
       }
