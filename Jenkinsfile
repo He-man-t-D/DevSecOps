@@ -13,12 +13,13 @@ pipeline {
       }
     }
 
-    // stage('check-secrets'){
-    //   steps{
-    //     sh 'docker pull gesellix/trufflehog'
-    //     sh 'docker run -t gesellix/trufflehog --json https://github.com/He-man-t-D/DevSecOps.git > trufflehog'
-    //   }
-    // }
+    stage('check-secrets'){
+      steps{
+        sh 'rm trufflehog || true'
+        sh 'docker run -t gesellix/trufflehog --json https://github.com/He-man-t-D/DevSecOps.git > trufflehog'
+        sh 'cat trufflehog'
+      }
+    }
 
     
     stage ('Build') {
