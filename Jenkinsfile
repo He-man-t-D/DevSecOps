@@ -112,6 +112,12 @@ pipeline {
                 sh 'scp -o StrictHostKeyChecking=no target/*.war Hemant@74.225.211.113:prod/apache-tomcat-10.1.24/webapps/'
            }       
     }
+        
+stage('DAST'){
+        steps{
+              sh "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://74.225.211.113:8080/WebApp"  
+        }
+}
     
   }  
 }
