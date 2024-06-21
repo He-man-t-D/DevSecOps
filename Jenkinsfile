@@ -109,6 +109,7 @@ pipeline {
     
     stage ('Deploy-To-Tomcat') {
             steps {
+                sh 'pwd'
            sshagent(['tomcat']) {
                 sh 'scp -o StrictHostKeyChecking=no target/*.war Hemant@74.225.211.113:prod/apache-tomcat-10.1.24/webapps/'
               }      
