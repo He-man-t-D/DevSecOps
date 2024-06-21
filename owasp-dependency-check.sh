@@ -17,6 +17,7 @@ fi
 
 # Make sure we are using the latest version
 docker pull owasp/dependency-check:$DC_VERSION
+echo " hello  testtt $DC_DIRECTORY   : $DATA_DIRECTORY $DC_VERSION  ${USER} $DC_PROJECT"
 
 docker run --rm \
     -e user=$USER \
