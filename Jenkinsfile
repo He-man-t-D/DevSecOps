@@ -26,7 +26,7 @@ pipeline {
          sh 'rm owasp* || true'
          sh 'wget "https://raw.githubusercontent.com/He-man-t-D/DevSecOps/master/owasp-dependency-check.sh" '
          sh 'chmod +x owasp-dependency-check.sh'
-         sh './owasp-dependency-check.sh'
+         sh './owasp-dependency-check.sh --nvdApiKey eda07656-b93b-4b6d-8683-31c3cb347279'
         
       }
     }
